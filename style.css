@@ -1,35 +1,133 @@
-#center{
+#center {
     display: flex;
     justify-content: center;
     align-items: center;
-    height:80vh;
+    height: 80vh;
 }
-#card{
-    display: none;
+
+#sub {
+    font-size: 25px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #ff5e62;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#sub:hover {
+    background-color: #ff7f7f;
+}
+
+input {
+    width: 100%;
     padding: 10px;
-    background-color: antiquewhite;
-    width: 420px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+#card {
+    display: none;
+    padding: 20px;
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    max-width: 600px;
     height: auto;
+    transition: transform 0.3s ease-in-out;
 }
 
-#image{
-    
+#card:hover {
+    transform: scale(1.05);
+}
+
+#image {
     border: 2px solid black;
-    width: 80px;
-    height: 80px;
-    border-radius: 50px;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    overflow: hidden;
+    animation: spin 5s linear infinite;
 }
-
-#profile{
+#image:hover {
+    animation: zoom 0.5s forwards;
+}
+#profile {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 400px;
-    height: auto;
+    width: 100%;
 }
 
-td{
-    padding-left: 10px;
-    padding-right: 10px;
+td {
+    padding: 10px;
     text-align: center;
+    font-size: 1.2rem;
+}
+
+.name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    #sub {
+        font-size: 20px;
+        padding: 8px 16px;
+    }
+
+    input {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    #card {
+        width: 100%;
+    }
+
+    #image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #profile {
+        flex-direction: column;
+    }
+
+    td {
+        padding: 5px;
+    }
+
+    #image {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
 }
